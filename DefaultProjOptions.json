@@ -401,7 +401,7 @@
                 "certificate_mode":"per_host",
                 "listen_mode":"loopback_only",
                 "listener_port":8080,
-                "running":false
+                "running":true
             }
         ],
         "response_modification":{
