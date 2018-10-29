@@ -3,30 +3,9 @@
         "connections":{
             "hostname_resolution":[],
             "out_of_scope_requests":{
-                "advanced_mode":true,
+                "advanced_mode":false,
                 "drop_all_out_of_scope":false,
-                "exclude":[
-                    {
-                        "enabled":true,
-                        "file":"logout",
-                        "protocol":"any"
-                    },
-                    {
-                        "enabled":true,
-                        "file":"logoff",
-                        "protocol":"any"
-                    },
-                    {
-                        "enabled":true,
-                        "file":"exit",
-                        "protocol":"any"
-                    },
-                    {
-                        "enabled":true,
-                        "file":"signout",
-                        "protocol":"any"
-                    }
-                ],
+                "exclude":[],
                 "include":[],
                 "scope_option":"suite"
             },
@@ -251,7 +230,7 @@
         },
         "intercept_server_responses":{
             "automatically_update_content_length_header_when_the_response_is_edited":true,
-            "do_intercept":true,
+            "do_intercept":false,
             "rules":[
                 {
                     "boolean_operator":"or",
@@ -407,13 +386,13 @@
         "response_modification":{
             "convert_https_links_to_http":false,
             "enable_disabled_form_fields":false,
-            "highlight_unhidden_fields":true,
+            "highlight_unhidden_fields":false,
             "remove_all_javascript":false,
             "remove_input_field_length_limits":false,
             "remove_javascript_form_validation":false,
             "remove_object_tags":false,
             "remove_secure_flag_from_cookies":false,
-            "unhide_hidden_form_fields":true
+            "unhide_hidden_form_fields":false
         },
         "ssl_pass_through":{
             "automatically_add_entries_on_client_ssl_negotiation_failure":false,
@@ -448,7 +427,7 @@
     },
     "scanner":{
         "active_scanning_engine":{
-            "concurrent_request_limit":5,
+            "concurrent_request_limit":10,
             "do_throttle":false,
             "follow_redirects":true,
             "number_of_retries_on_failure":3,
@@ -459,14 +438,14 @@
         "active_scanning_optimization":{
             "intelligent_attack_selection":true,
             "scan_accuracy":"normal",
-            "scan_speed":"thorough"
+            "scan_speed":"normal"
         },
         "attack_insertion_points":{
             "change_body_to_cookie":false,
-            "change_body_to_url":true,
+            "change_body_to_url":false,
             "change_cookie_to_body":false,
             "change_cookie_to_url":false,
-            "change_url_to_body":true,
+            "change_url_to_body":false,
             "change_url_to_cookie":false,
             "insert_amf_params":false,
             "insert_body_params":true,
@@ -476,7 +455,7 @@
             "insert_param_names":true,
             "insert_url_params":true,
             "insert_url_path_filename":true,
-            "insert_url_path_folders":true,
+            "insert_url_path_folders":false,
             "max_insertion_points":30,
             "skip_all_tests_for_parameters":[],
             "skip_server_side_injection_for_parameters":[
@@ -561,56 +540,14 @@
             "use_nested_insertion_points":true
         },
         "live_active_scanning":{
-            "advanced_mode":true,
-            "exclude":[
-                {
-                    "enabled":true,
-                    "file":"logout",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"logoff",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"exit",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"signout",
-                    "protocol":"any"
-                }
-            ],
+            "advanced_mode":false,
+            "exclude":[],
             "include":[],
             "scope_option":"nothing"
         },
         "live_passive_scanning":{
-            "advanced_mode":true,
-            "exclude":[
-                {
-                    "enabled":true,
-                    "file":"logout",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"logoff",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"exit",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"signout",
-                    "protocol":"any"
-                }
-            ],
+            "advanced_mode":false,
+            "exclude":[],
             "include":[],
             "scope_option":"everything"
         },
@@ -673,52 +610,52 @@
         "engine":{
             "add_random_variation_to_throttle":false,
             "number_of_retries_on_failure":3,
-            "number_of_threads":5,
+            "number_of_threads":10,
             "pause_before_retry_on_failure":2000,
             "throttle_between_requests":false,
             "throttle_interval":0
         },
         "form_submission":{
-            "default_auto_fill_value":"TestingScope",
+            "default_auto_fill_value":"555-555-0199@example.com",
             "individuate_forms_by":"action_url_method_and_fields",
             "iterate_all_values_of_submit_fields":true,
-            "max_submissions_per_form":5,
+            "max_submissions_per_form":10,
             "mode":"automatic",
             "param_auto_fill_rules":[
                 {
                     "enabled":true,
                     "field_name":"mail",
-                    "field_value":"jonas.carlsson@atea.se",
+                    "field_value":"winter@example.com",
                     "match_type":"regex"
                 },
                 {
                     "enabled":true,
                     "field_name":"first",
-                    "field_value":"Jonas",
+                    "field_value":"Peter",
                     "match_type":"regex"
                 },
                 {
                     "enabled":true,
                     "field_name":"last",
-                    "field_value":"Carlsson",
+                    "field_value":"Winter",
                     "match_type":"regex"
                 },
                 {
                     "enabled":true,
                     "field_name":"surname",
-                    "field_value":"Carlsson",
+                    "field_value":"Winter",
                     "match_type":"regex"
                 },
                 {
                     "enabled":true,
                     "field_name":"name",
-                    "field_value":"Jonas Carlsson",
+                    "field_value":"Peter Winter",
                     "match_type":"regex"
                 },
                 {
                     "enabled":true,
                     "field_name":"comp",
-                    "field_value":"Atea",
+                    "field_value":"Winter Consulting",
                     "match_type":"regex"
                 },
                 {
@@ -829,29 +766,8 @@
             "use_referer":true
         },
         "scope":{
-            "advanced_mode":true,
-            "exclude":[
-                {
-                    "enabled":true,
-                    "file":"logout",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"logoff",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"exit",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"signout",
-                    "protocol":"any"
-                }
-            ],
+            "advanced_mode":false,
+            "exclude":[],
             "include":[],
             "scope_option":"suite"
         }
@@ -880,7 +796,7 @@
                 "show_only_specific":false
             },
             "by_folders":{
-                "hide_empty_folders":true
+                "hide_empty_folders":false
             },
             "by_mime_type":{
                 "show_css":false,
@@ -907,34 +823,13 @@
             "by_status_code":{
                 "show_2xx":true,
                 "show_3xx":true,
-                "show_4xx":false,
+                "show_4xx":true,
                 "show_5xx":true
             }
         },
         "scope":{
-            "advanced_mode":true,
-            "exclude":[
-                {
-                    "enabled":true,
-                    "file":"logout",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"logoff",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"exit",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
-                    "file":"signout",
-                    "protocol":"any"
-                }
-            ],
+            "advanced_mode":false,
+            "exclude":[],
             "include":[]
         }
     }
